@@ -36,11 +36,11 @@ import gif09 from '../../gifs/more gifs/9.gif'
 
 /* ---------- assets · Part B (the five multiverse illustrations) ---------- */
 
-import universeImage1 from '../../multiverse/1.png'
-import universeImage2 from '../../multiverse/2.png'
-import universeImage3 from '../../multiverse/3.png'
-import universeImage4 from '../../multiverse/4.png'
-import universeImage5 from '../../multiverse/5.png'
+import universeImage1 from '../../Multiverse/1.png'
+import universeImage2 from '../../Multiverse/2.png'
+import universeImage3 from '../../Multiverse/3.png'
+import universeImage4 from '../../Multiverse/4.png'
+import universeImage5 from '../../Multiverse/5.png'
 
 /* ---------- the world ---------- */
 
