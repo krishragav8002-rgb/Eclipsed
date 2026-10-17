@@ -14,7 +14,6 @@ import { FlowerButton } from '../ui/FlowerButton'
 const SOFT_EASE: [number, number, number, number] = [0.22, 0.9, 0.32, 1]
 const POP_EASE: [number, number, number, number] = [0.34, 1.5, 0.64, 1]
 
-const MAIN_AT = 0.6
 const ASIDE_AT = 1.0
 
 /**
@@ -76,7 +75,7 @@ export function MoonNote() {
               ease: POP_EASE,
             }}
           >
-            <PaperCard tone="lavender" rotate={-1.2} className="px-3.5 py-2">
+            <PaperCard tone="lilac" rotate={-1.2} className="px-3.5 py-2">
               <p className="hand text-[1.05rem] text-cocoa">
                 PS: I would have spammed YES as soon as I saw the question😒
               </p>

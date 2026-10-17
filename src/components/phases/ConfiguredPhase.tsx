@@ -1,10 +1,7 @@
 import { PencilLine, RotateCcw } from 'lucide-react'
-import type { ReactNode } from 'react'
-import { site, type ContentBlock, type PhaseContent } from '../../content/site.config'
+import { site, type PhaseContent } from '../../content/site.config'
 import { useAutofocus } from '../../hooks/useAutofocus'
 import { usePhaseTransition } from '../../hooks/usePhaseTransition'
-import { Sunflower } from '../flowers/Sunflower'
-import { Doodle } from '../scrapbook/Doodle'
 import { PaperCard } from '../scrapbook/PaperCard'
 import { Sticker } from '../scrapbook/Sticker'
 import { TapeStrip } from '../scrapbook/TapeStrip'
@@ -12,66 +9,6 @@ import { FlowerButton } from '../ui/FlowerButton'
 
 interface ConfiguredPhaseProps {
   content: PhaseContent
-}
-
-function renderBlock(block: ContentBlock, index: number): ReactNode {
-  switch (block.kind) {
-    case 'text':
-      return (
-        <PaperCard key={index} tone="paper" className="p-4">
-          <p className="text-[0.95rem] leading-relaxed">{block.body}</p>
-        </PaperCard>
-      )
-
-    case 'quote':
-      return (
-        <PaperCard key={index} tone="sky" className="relative p-4 pl-6">
-          <TapeStrip tone="lilac" className="-top-3 right-6 rotate-3" />
-          <Doodle name="heart" className="mb-1 w-5 text-sage-deep" />
-          <blockquote
-            className="italic"
-            style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.05rem' }}
-          >
-            {block.body}
-          </blockquote>
-          {block.attribution && (
-            <cite className="hand mt-1 block text-[1.1rem] not-italic text-cocoa-soft">
-              {block.attribution}
-            </cite>
-          )}
-        </PaperCard>
-      )
-
-    case 'list':
-      return (
-        <PaperCard key={index} tone="sage" className="p-4">
-          <ul className="grid gap-2">
-            {block.items.map((item, i) => (
-              <li key={i} className="flex items-start gap-2.5">
-                <Sunflower size={18} className="mt-1 shrink-0" />
-                <span className="text-[0.95rem] font-semibold">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </PaperCard>
-      )
-
-    case 'placeholder':
-      return (
-        <div
-          key={index}
-          className="paper paper-tex grid place-items-center rounded-card border-2 border-dashed border-cocoa/25 bg-paper-dim/60 px-3 py-4 text-center"
-        >
-          <div>
-            <PencilLine size={20} className="mx-auto text-cocoa-soft" aria-hidden="true" />
-            <p className="hand mt-1 text-[1.05rem] text-cocoa-soft">{block.label}</p>
-            <p className="mt-0.5 text-[0.55rem] font-extrabold uppercase tracking-[0.18em] text-cocoa-soft/80">
-              reserved
-            </p>
-          </div>
-        </div>
-      )
-  }
 }
 
 /**

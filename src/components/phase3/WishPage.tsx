@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import { PHASE3_WISH } from '../../content/phase3.config'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
-import { HeartDoodle, Scribble, Spark } from './doodles'
+import { HeartDoodle, Scribble } from './doodles'
 import coupleImage from '../../../couple-transparent.png'
 
 /**
