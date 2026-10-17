@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" width="1440" height="420" role="img">
+  <title>Layered snow mountains and pines</title>
+  <defs>
+    <linearGradient id="gRangeBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c7b1f2" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#9b8adf" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#6f5bb0" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="gRangeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8f7ad6" stop-opacity="0.62"/>
+      <stop offset="0.6" stop-color="#5f4b9e" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#443573" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="gRangeFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a3a7c" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#332759" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#241b3d" stop-opacity="0.98"/>
+    </linearGradient>
+    <linearGradient id="gPine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c2150" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#1b1430" stop-opacity="0.99"/>
+    </linearGradient>
+    <radialGradient id="gSnowGround" cx="0.5" cy="1" r="0.72">
+      <stop offset="0" stop-color="#f7f3ff" stop-opacity="0.3"/>
+      <stop offset="0.5" stop-color="#c7b1f2" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c7b1f2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gMist" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8cdf0" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#d8cdf0" stop-opacity="0"/>
+    </radialGradient>
+
+    <g id="fir"><path d="M0 0 16 26 9 26 24 50 15 50 30 74-30 74-15 50-24 50-9 26-16 26Z"/></g>
+  </defs>
+
+  <!-- furthest range: pale, moonlit, almost dissolved into the sky -->
+  <path
+    d="M0 214 118 148 228 196 336 122 458 190 578 130 704 200 826 138 952 206 1074 146 1204 214 1320 158 1440 200V420H0Z"
+    fill="url(#gRangeBack)"/>
+
+  <!-- snow caught along the furthest ridge -->
+  <path
+    d="M118 148 138 172 108 174ZM336 122 358 150 322 152ZM578 130 600 158 562 160ZM826 138 848 166 812 168ZM1074 146 1096 174 1060 176ZM1320 158 1342 184 1306 186Z"
+    fill="#f7f3ff" opacity="0.4"/>
+
+  <ellipse cx="420" cy="238" rx="420" ry="52" fill="url(#gMist)"/>
+  <ellipse cx="1090" cy="252" rx="380" ry="46" fill="url(#gMist)"/>
+
+  <!-- middle range -->
+  <path
+    d="M0 300 152 226 306 292 466 218 628 294 786 232 942 300 1104 236 1258 302 1392 254 1440 288V420H0Z"
+    fill="url(#gRangeMid)"/>
+
+  <path
+    d="M152 226 176 256 136 258ZM466 218 492 250 450 252ZM786 232 812 264 770 266ZM1104 236 1130 268 1088 270Z"
+    fill="#f7f3ff" opacity="0.34"/>
+
+  <ellipse cx="760" cy="326" rx="520" ry="46" fill="url(#gMist)"/>
+
+  <!-- nearest range, keeping a low horizon so the cards stay clear -->
+  <path
+    d="M0 356 176 306 340 350 520 302 700 352 872 310 1046 356 1220 316 1440 360V420H0Z"
+    fill="url(#gRangeFront)"/>
+
+  <path
+    d="M176 306 200 330 162 332ZM520 302 546 328 508 330ZM872 310 898 336 860 338ZM1220 316 1246 342 1208 344Z"
+    fill="#e8e0ff" opacity="0.42"/>
+
+  <!-- a snowdrift along the very bottom of the screen -->
+  <path
+    d="M0 392c86-14 172-6 258-2s172 8 258-2 172-14 258-8 172 16 258 10 172-16 240-14V420H0Z"
+    fill="#f7f3ff" opacity="0.16"/>
+  <rect y="392" width="1440" height="28" fill="url(#gSnowGround)"/>
+
+  <!-- a line of firs along the drift, hand-placed sizes -->
+  <g fill="url(#gPine)">
+    <use href="#fir" transform="translate(52 372) scale(0.62)"/>
+    <use href="#fir" transform="translate(96 356) scale(0.88)"/>
+    <use href="#fir" transform="translate(148 374) scale(0.6)"/>
+    <use href="#fir" transform="translate(206 344) scale(1.02)"/>
+    <use href="#fir" transform="translate(268 368) scale(0.7)"/>
+    <use href="#fir" transform="translate(330 380) scale(0.54)"/>
+    <use href="#fir" transform="translate(392 350) scale(0.94)"/>
+    <use href="#fir" transform="translate(452 370) scale(0.66)"/>
+    <use href="#fir" transform="translate(512 382) scale(0.5)"/>
+    <use href="#fir" transform="translate(572 352) scale(0.92)"/>
+    <use href="#fir" transform="translate(632 372) scale(0.64)"/>
+    <use href="#fir" transform="translate(694 342) scale(1.06)"/>
+    <use href="#fir" transform="translate(756 366) scale(0.72)"/>
+    <use href="#fir" transform="translate(818 380) scale(0.56)"/>
+    <use href="#fir" transform="translate(880 348) scale(0.96)"/>
+    <use href="#fir" transform="translate(940 372) scale(0.64)"/>
+    <use href="#fir" transform="translate(1000 384) scale(0.48)"/>
+    <use href="#fir" transform="translate(1062 354) scale(0.9)"/>
+    <use href="#fir" transform="translate(1124 374) scale(0.6)"/>
+    <use href="#fir" transform="translate(1186 344) scale(1)"/>
+    <use href="#fir" transform="translate(1248 368) scale(0.7)"/>
+    <use href="#fir" transform="translate(1310 382) scale(0.52)"/>
+    <use href="#fir" transform="translate(1372 352) scale(0.94)"/>
+  </g>
+
+  <!-- snow resting on the nearest fir tops -->
+  <g fill="#f7f3ff" opacity="0.5">
+    <path d="M96 356 104 371 88 371Z"/>
+    <path d="M206 344 215 361 197 361Z"/>
+    <path d="M392 350 400 366 384 366Z"/>
+    <path d="M572 352 580 368 564 368Z"/>
+    <path d="M694 342 704 360 684 360Z"/>
+    <path d="M880 348 888 364 872 364Z"/>
+    <path d="M1062 354 1070 369 1054 369Z"/>
+    <path d="M1186 344 1195 361 1177 361Z"/>
+    <path d="M1372 352 1380 367 1364 367Z"/>
+  </g>
+
+  <!-- a snowman and a couple of drifts, standing in front of the tree line.
+       Snow silhouettes only: pale bodies with dark coal details, kept faint. -->
+  <ellipse cx="232" cy="392" rx="46" ry="12" fill="#f7f3ff" opacity="0.2"/>
+  <ellipse cx="356" cy="394" rx="34" ry="9" fill="#f7f3ff" opacity="0.16"/>
+  <ellipse cx="1130" cy="393" rx="42" ry="10" fill="#f7f3ff" opacity="0.15"/>
+
+  <g opacity="0.34">
+    <g fill="#f7f3ff">
+      <circle cx="232" cy="380" r="14"/>
+      <circle cx="232" cy="362" r="10"/>
+      <circle cx="232" cy="348" r="7"/>
+    </g>
+    <g fill="#241b3d" opacity="0.85">
+      <rect x="226" y="337" width="12" height="2.2" rx="1.1"/>
+      <rect x="229" y="328" width="6" height="9" rx="1"/>
+      <path d="M232 348.4l3.4.9-3.4 1Z"/>
+      <circle cx="229.6" cy="347.4" r="1.1"/>
+      <circle cx="234.4" cy="347.4" r="1.1"/>
+      <circle cx="232" cy="371" r="1.1"/>
+      <circle cx="232" cy="378.5" r="1.2"/>
+      <path d="M219 362 207 356M245 362 257 356" fill="none" stroke="#241b3d" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

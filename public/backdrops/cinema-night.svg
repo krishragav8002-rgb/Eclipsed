@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img">
+  <title>A midnight cinema sky over snow mountains</title>
+  <defs>
+    <linearGradient id="cSky" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#211a3c"/>
+      <stop offset="0.5" stop-color="#241a44"/>
+      <stop offset="1" stop-color="#1b1430"/>
+    </linearGradient>
+
+    <radialGradient id="cBloomTop" cx="0.86" cy="0.04" r="0.58">
+      <stop offset="0" stop-color="#b9c8ff" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#b9c8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cBloomLeft" cx="0.1" cy="0.22" r="0.5">
+      <stop offset="0" stop-color="#7556b8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7556b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cBloomIcy" cx="0.32" cy="0.56" r="0.36">
+      <stop offset="0" stop-color="#b9c8ff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#b9c8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cScreen" cx="0.5" cy="0.48" r="0.42">
+      <stop offset="0" stop-color="#c7b1f2" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#c7b1f2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cLow" cx="0.5" cy="1.04" r="0.6">
+      <stop offset="0" stop-color="#7556b8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#7556b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cMist" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d8cdf0" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#d8cdf0" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cRangeBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8f7ad6" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#4a3a7c" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="cRangeFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b2f63" stop-opacity="0.92"/>
+      <stop offset="0.6" stop-color="#2b2150" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#1b1430" stop-opacity="1"/>
+    </linearGradient>
+
+    <pattern id="cPerf" width="90" height="46" patternUnits="userSpaceOnUse">
+      <rect x="12" y="11" width="14" height="22" rx="3" fill="#f7f3ff" opacity="0.18"/>
+      <rect x="64" y="11" width="14" height="22" rx="3" fill="#f7f3ff" opacity="0.18"/>
+    </pattern>
+
+    <g id="cReel">
+      <rect x="0" y="0" width="90" height="1200" rx="12" fill="#c7b1f2" opacity="0.07"/>
+      <rect x="0" y="0" width="90" height="1200" fill="url(#cPerf)"/>
+      <path d="M7 0v1200M83 0v1200" stroke="#f7f3ff" stroke-opacity="0.16" stroke-width="1.4"/>
+    </g>
+
+    <g id="cClap" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 10.4h16.2v8.4H4z"/>
+      <path d="M3.5 9.7 20.2 6.5l1 3.7-16.7 3.2z"/>
+      <path d="M10.6 12.6l4 2-4 2z"/>
+    </g>
+    <g id="cReelMotif" fill="none">
+      <circle cx="12" cy="12" r="8.3"/>
+      <circle cx="12" cy="12" r="3.1"/>
+      <circle cx="12" cy="12" r="1"/>
+      <path d="M6.4 7.6A7.4 7.4 0 0 1 12.6 4.9"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#cSky)"/>
+  <rect width="1200" height="1200" fill="url(#cBloomTop)"/>
+  <rect width="1200" height="1200" fill="url(#cBloomLeft)"/>
+  <rect width="1200" height="1200" fill="url(#cBloomIcy)"/>
+  <rect width="1200" height="1200" fill="url(#cScreen)"/>
+  <rect width="1200" height="1200" fill="url(#cLow)"/>
+
+  <!-- stars, wide and thin, so the sky keeps its depth -->
+  <g fill="#f7f3ff">
+    <circle cx="86" cy="96" r="2.4" opacity="0.85"/>
+    <circle cx="182" cy="196" r="1.7" opacity="0.6"/>
+    <circle cx="268" cy="72" r="2" opacity="0.7"/>
+    <circle cx="336" cy="240" r="2.5" opacity="0.88"/>
+    <circle cx="420" cy="130" r="1.6" opacity="0.58"/>
+    <circle cx="498" cy="286" r="1.9" opacity="0.68"/>
+    <circle cx="560" cy="88" r="2.3" opacity="0.8"/>
+    <circle cx="648" cy="204" r="1.5" opacity="0.55"/>
+    <circle cx="706" cy="62" r="2.1" opacity="0.74"/>
+    <circle cx="792" cy="176" r="1.7" opacity="0.6"/>
+    <circle cx="868" cy="98" r="2.4" opacity="0.84"/>
+    <circle cx="944" cy="246" r="1.6" opacity="0.58"/>
+    <circle cx="1032" cy="142" r="2.2" opacity="0.78"/>
+    <circle cx="1112" cy="278" r="1.8" opacity="0.64"/>
+    <circle cx="1178" cy="120" r="2.3" opacity="0.8"/>
+    <circle cx="60" cy="352" r="1.8" opacity="0.62"/>
+    <circle cx="148" cy="452" r="2.3" opacity="0.8"/>
+    <circle cx="242" cy="376" r="1.5" opacity="0.54"/>
+    <circle cx="96" cy="572" r="2" opacity="0.68"/>
+    <circle cx="320" cy="512" r="1.7" opacity="0.58"/>
+    <circle cx="412" cy="604" r="2.2" opacity="0.72"/>
+    <circle cx="516" cy="428" r="1.5" opacity="0.5"/>
+    <circle cx="608" cy="556" r="1.9" opacity="0.64"/>
+    <circle cx="706" cy="404" r="1.5" opacity="0.52"/>
+    <circle cx="812" cy="518" r="2.2" opacity="0.72"/>
+    <circle cx="912" cy="436" r="1.6" opacity="0.56"/>
+    <circle cx="1020" cy="534" r="2" opacity="0.66"/>
+    <circle cx="1118" cy="424" r="1.5" opacity="0.52"/>
+    <circle cx="1176" cy="612" r="2.2" opacity="0.7"/>
+    <circle cx="1064" cy="668" r="1.6" opacity="0.54"/>
+    <circle cx="164" cy="700" r="1.9" opacity="0.62"/>
+    <circle cx="366" cy="742" r="1.5" opacity="0.5"/>
+    <circle cx="546" cy="700" r="2.1" opacity="0.66"/>
+    <circle cx="742" cy="758" r="1.5" opacity="0.5"/>
+    <circle cx="928" cy="706" r="1.9" opacity="0.6"/>
+    <circle cx="1104" cy="762" r="1.5" opacity="0.48"/>
+  </g>
+
+  <!-- a few sketched sparkles in the deep field -->
+  <g fill="none" stroke="#e8e0ff" stroke-width="1.6" stroke-linecap="round" opacity="0.7">
+    <path d="M392 320c.9 5.6 1.7 6.4 7.3 7.3-5.6.9-6.4 1.7-7.3 7.3-.9-5.6-1.7-6.4-7.3-7.3 5.6-.9 6.4-1.7 7.3-7.3Z"/>
+    <path d="M1002 386c.7 4.4 1.4 5.1 5.8 5.8-4.4.7-5.1 1.4-5.8 5.8-.7-4.4-1.4-5.1-5.8-5.8 4.4-.7 5.1-1.4 5.8-5.8Z"/>
+    <path d="M224 130c.7 4.4 1.4 5.1 5.8 5.8-4.4.7-5.1 1.4-5.8 5.8-.7-4.4-1.4-5.1-5.8-5.8 4.4-.7 5.1-1.4 5.8-5.8Z"/>
+  </g>
+
+  <!-- two constellations, drawn like pencilled joins -->
+  <g fill="none" stroke="#c7b1f2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
+    <path d="M340 396 432 340 524 392 616 330"/>
+    <path d="M716 620 800 568 884 626"/>
+  </g>
+  <g fill="#f7f3ff">
+    <circle cx="340" cy="396" r="3" opacity="0.78"/>
+    <circle cx="432" cy="340" r="3.4" opacity="0.84"/>
+    <circle cx="524" cy="392" r="3" opacity="0.78"/>
+    <circle cx="616" cy="330" r="3.4" opacity="0.84"/>
+    <circle cx="716" cy="620" r="2.8" opacity="0.72"/>
+    <circle cx="800" cy="568" r="3.2" opacity="0.78"/>
+    <circle cx="884" cy="626" r="2.8" opacity="0.72"/>
+  </g>
+
+  <!-- film running down both outer edges of the screen -->
+  <g opacity="0.55">
+    <use href="#cReel" transform="translate(10 0)"/>
+    <use href="#cReel" transform="translate(1100 0)"/>
+  </g>
+
+  <!-- clapperboards and reels, pencilled into the corners -->
+  <g stroke="#c7b1f2" stroke-width="2" opacity="0.22">
+    <use href="#cClap" transform="translate(120 470) scale(2.2) rotate(-8)"/>
+    <use href="#cClap" transform="translate(986 862) scale(1.9) rotate(7)"/>
+    <use href="#cReelMotif" transform="translate(1004 508) scale(1.8) rotate(10)"/>
+    <use href="#cReelMotif" transform="translate(146 890) scale(1.6) rotate(-12)"/>
+  </g>
+
+  <ellipse cx="600" cy="836" rx="600" ry="52" fill="url(#cMist)"/>
+
+  <!-- far ridge -->
+  <path d="M0 858 150 776 306 842 470 758 636 838 800 770 968 844 1136 776 1292 846 1440 786V1200H0Z" fill="url(#cRangeBack)"/>
+  <path d="M150 776 176 806 134 808ZM470 758 498 792 452 794ZM800 770 828 802 784 804ZM1136 776 1162 808 1120 810Z" fill="#f7f3ff" opacity="0.36"/>
+
+  <ellipse cx="600" cy="906" rx="560" ry="44" fill="url(#cMist)"/>
+
+  <!-- near ridge, low enough to leave the player clear -->
+  <path d="M0 946 176 892 340 938 520 888 700 940 872 896 1046 944 1220 902 1440 948V1200H0Z" fill="url(#cRangeFront)"/>
+  <path d="M176 892 202 916 162 918ZM520 888 548 914 508 916ZM872 896 898 922 860 924ZM1220 902 1246 928 1208 930Z" fill="#e8e0ff" opacity="0.4"/>
+
+  <!-- the snow ground, catching the moon's icy light -->
+  <path d="M0 1006c86-16 172-8 258-4s172 10 258-2 172-16 258-10 172 18 258 12 172-18 240-16V1200H0Z" fill="#f7f3ff" opacity="0.1"/>
+  <g fill="#b9c8ff" opacity="0.16">
+    <circle cx="248" cy="1040" r="3.2"/>
+    <circle cx="672" cy="1064" r="3.6"/>
+    <circle cx="944" cy="1032" r="3"/>
+    <circle cx="452" cy="1084" r="2.8"/>
+    <circle cx="1120" cy="1078" r="3.4"/>
+    <circle cx="140" cy="1090" r="2.6"/>
+  </g>
+
+  <!-- a faint bloom sitting exactly behind the player -->
+  <rect width="1200" height="1200" fill="url(#cScreen)" opacity="0.75"/>
+</svg>

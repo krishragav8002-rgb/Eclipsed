@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img">
+  <title>Blush music-journal paper</title>
+  <defs>
+    <linearGradient id="jPaper" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#fdf1ee"/>
+      <stop offset="0.5" stop-color="#fbdcd8"/>
+      <stop offset="1" stop-color="#f6bfbb"/>
+    </linearGradient>
+
+    <radialGradient id="jWashCream" cx="0.13" cy="0.02" r="0.6">
+      <stop offset="0" stop-color="#fff0ee" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#fff0ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jWashBlush" cx="0.95" cy="0.24" r="0.55">
+      <stop offset="0" stop-color="#f4a9a2" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#f4a9a2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jWashCherry" cx="0.5" cy="1.05" r="0.62">
+      <stop offset="0" stop-color="#e4636c" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#e4636c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jWashRose" cx="0.04" cy="0.9" r="0.4">
+      <stop offset="0" stop-color="#a83043" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#a83043" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jWashPeach" cx="0.84" cy="0.94" r="0.4">
+      <stop offset="0" stop-color="#e89aab" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#e89aab" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="jEdge" cx="0.5" cy="0.46" r="0.78">
+      <stop offset="0.42" stop-color="#a83043" stop-opacity="0"/>
+      <stop offset="0.78" stop-color="#a83043" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#a83043" stop-opacity="0.2"/>
+    </radialGradient>
+
+    <pattern id="jGrain" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="0.95" fill="#a83043" opacity="0.13"/>
+      <circle cx="14" cy="15" r="0.85" fill="#c4404f" opacity="0.1"/>
+      <circle cx="19" cy="7" r="0.7" fill="#a83043" opacity="0.08"/>
+    </pattern>
+
+    <pattern id="jFibre" width="130" height="130" patternUnits="userSpaceOnUse">
+      <path d="M8 30c16 8 30-8 50-2s32 14 52 4" stroke="#c4404f" stroke-opacity="0.1" stroke-width="1" fill="none"/>
+      <path d="M12 86c20-10 34 8 54 2s30-16 50-6" stroke="#c4404f" stroke-opacity="0.09" stroke-width="1" fill="none"/>
+      <path d="M78 14c8 18 4 34-2 54" stroke="#c4404f" stroke-opacity="0.07" stroke-width="1" fill="none"/>
+    </pattern>
+
+    <g id="jNote" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9.8 17.2V6.4l7.8-1.6v10.6"/>
+      <ellipse cx="7.5" cy="17.4" rx="2.6" ry="1.9"/>
+      <ellipse cx="15.3" cy="15.6" rx="2.6" ry="1.9"/>
+    </g>
+    <g id="jRecord" fill="none">
+      <circle cx="12" cy="12" r="8.3"/>
+      <circle cx="12" cy="12" r="3.1"/>
+      <circle cx="12" cy="12" r="1"/>
+      <path d="M6.4 7.6A7.4 7.4 0 0 1 12.6 4.9"/>
+    </g>
+    <g id="jHeadphones" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.8 14.2v-2A7.2 7.2 0 0 1 19.2 12v2.2"/>
+      <path d="M4.8 12.4h2.1a1.3 1.3 0 0 1 1.3 1.3v3.4a1.3 1.3 0 0 1-1.3 1.3H5.8a1 1 0 0 1-1-1z"/>
+      <path d="M19.2 12.4h-2.1a1.3 1.3 0 0 0-1.3 1.3v3.4a1.3 1.3 0 0 0 1.3 1.3h1.1a1 1 0 0 0 1-1z"/>
+    </g>
+    <path id="jHeart" d="M12 20.4c-4.6-3.2-7.6-6.1-7.6-9.4A4.2 4.2 0 0 1 12 8.4a4.2 4.2 0 0 1 7.6 2.6c0 3.3-3 6.2-7.6 9.4Z" fill="none"/>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#jPaper)"/>
+  <rect width="1200" height="1200" fill="url(#jWashCream)"/>
+  <rect width="1200" height="1200" fill="url(#jWashBlush)"/>
+  <rect width="1200" height="1200" fill="url(#jWashCherry)"/>
+  <rect width="1200" height="1200" fill="url(#jWashRose)"/>
+  <rect width="1200" height="1200" fill="url(#jWashPeach)"/>
+  <rect width="1200" height="1200" fill="url(#jFibre)"/>
+  <rect width="1200" height="1200" fill="url(#jGrain)"/>
+
+  <!-- two staves running across the sheet, the way a ruled notebook page would -->
+  <g stroke="#a83043" stroke-opacity="0.16" stroke-width="1.6" stroke-linecap="round" transform="rotate(-6 600 226)" fill="none">
+    <path d="M-40 200h1280"/>
+    <path d="M-40 214h1280"/>
+    <path d="M-40 228h1280"/>
+    <path d="M-40 242h1280"/>
+    <path d="M-40 256h1280"/>
+  </g>
+  <g stroke="#a83043" stroke-opacity="0.13" stroke-width="1.6" stroke-linecap="round" transform="rotate(5 600 828)" fill="none">
+    <path d="M-40 800h1280"/>
+    <path d="M-40 814h1280"/>
+    <path d="M-40 828h1280"/>
+    <path d="M-40 842h1280"/>
+    <path d="M-40 856h1280"/>
+  </g>
+
+  <!-- notes drifting across the ruled paper -->
+  <g stroke="#c4404f" stroke-width="2" opacity="0.2">
+    <use href="#jNote" transform="translate(168 292) scale(1.5)"/>
+    <use href="#jNote" transform="translate(702 158) scale(1.2) rotate(-10)"/>
+    <use href="#jNote" transform="translate(1044 566) scale(1.6) rotate(8)"/>
+    <use href="#jNote" transform="translate(292 946) scale(1.35) rotate(6)"/>
+    <use href="#jNote" transform="translate(852 1010) scale(1.15) rotate(-8)"/>
+    <use href="#jNote" transform="translate(524 512) scale(1.05) rotate(12)"/>
+  </g>
+
+  <!-- records and headphones, pressed into the margins -->
+  <g stroke="#a83043" stroke-width="2" opacity="0.16">
+    <use href="#jRecord" transform="translate(920 300) scale(2.1)"/>
+    <use href="#jRecord" transform="translate(126 720) scale(1.7) rotate(12)"/>
+    <use href="#jHeadphones" transform="translate(452 62) scale(1.9) rotate(-6)"/>
+    <use href="#jHeadphones" transform="translate(1000 866) scale(1.6) rotate(9)"/>
+  </g>
+
+  <!-- little blush hearts, scattered like ink stamps -->
+  <g stroke="#c4404f" stroke-width="2" opacity="0.22">
+    <use href="#jHeart" transform="translate(360 392) scale(1.5) rotate(-12)"/>
+    <use href="#jHeart" transform="translate(618 706) scale(1.25) rotate(10)"/>
+    <use href="#jHeart" transform="translate(212 566) scale(1.15) rotate(6)"/>
+    <use href="#jHeart" transform="translate(796 452) scale(1.4) rotate(-8)"/>
+    <use href="#jHeart" transform="translate(1104 1064) scale(1.3) rotate(14)"/>
+    <use href="#jHeart" transform="translate(90 1010) scale(1.2) rotate(-10)"/>
+  </g>
+
+  <!-- a couple of hand-drawn sound waves, breathing room in the wash -->
+  <g stroke="#a83043" stroke-opacity="0.15" stroke-width="2.4" stroke-linecap="round" opacity="0.9">
+    <path d="M40 1030v-46M72 1046v-78M104 1022v-38M136 1050v-84M168 1032v-52M200 1042v-70M232 1026v-42"/>
+    <path d="M980 214v-44M1012 230v-76M1044 206v-36M1076 234v-82M1108 216v-50M1140 226v-68"/>
+  </g>
+
+  <!-- blush flecks, so even a still frame has a little confetti in it -->
+  <g opacity="0.4">
+    <circle cx="286" cy="640" r="3.4" fill="#e4636c"/>
+    <circle cx="934" cy="956" r="3.8" fill="#e89aab"/>
+    <circle cx="586" cy="1024" r="3" fill="#e4636c"/>
+    <circle cx="1066" cy="410" r="3.2" fill="#e89aab"/>
+    <circle cx="428" cy="176" r="2.8" fill="#e4636c"/>
+    <circle cx="214" cy="424" r="2.6" fill="#e89aab"/>
+    <circle cx="770" cy="586" r="3" fill="#e4636c"/>
+    <circle cx="1136" cy="742" r="2.8" fill="#e89aab"/>
+    <circle cx="126" cy="880" r="2.6" fill="#e4636c"/>
+    <circle cx="656" cy="882" r="2.4" fill="#e89aab"/>
+  </g>
+
+  <!-- a few cream paper flecks within the same warm family -->
+  <g fill="#fff0ee" opacity="0.55">
+    <rect x="336" y="228" width="9" height="13" rx="1.5" transform="rotate(-14 336 228)"/>
+    <rect x="898" y="640" width="8" height="12" rx="1.5" transform="rotate(18 898 640)"/>
+    <rect x="152" y="1104" width="9" height="13" rx="1.5" transform="rotate(8 152 1104)"/>
+    <rect x="1042" y="118" width="8" height="12" rx="1.5" transform="rotate(-10 1042 118)"/>
+  </g>
+
+  <rect width="1200" height="1200" fill="url(#jEdge)"/>
+</svg>

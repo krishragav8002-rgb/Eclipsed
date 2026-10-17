@@ -1,0 +1,89 @@
+/* ============================================================
+   Design tokens — sunflower scrapbook
+   Blush pink · butter yellow · warm cream · muted sage · pastels
+   ============================================================ */
+
+@theme {
+  /* --- paper & ink --- */
+  --color-cream: #fff8ec;
+  --color-paper: #fffdf7;
+  --color-paper-dim: #f6eddc;
+
+  /* --- blush pinks --- */
+  --color-blush: #f7c9d4;
+  --color-blush-deep: #e89aab;
+
+  /* --- butter yellows (sunflower petals) --- */
+  --color-butter: #fbe28a;
+  --color-butter-deep: #f2c94c;
+
+  /* --- muted sages (stems & leaves) --- */
+  --color-sage: #a9bfa3;
+  --color-sage-deep: #7e9a78;
+
+  /* --- complementary pastels --- */
+  --color-sky: #cfe3f2;
+  --color-lilac: #ddd1ee;
+
+  /* --- winter (the celebration palette that the sunflower warm-up cools into) --- */
+  --color-ice: #bcdcf0;
+  --color-ice-deep: #7fb0d4;
+  --color-frost: #eef7ff;
+  --color-lavender: #d8cdf0;
+  --color-lavender-deep: #c9b8e8;
+  --color-winter-pink: #f7d6e2;
+  --color-night-deep: #1a0b3b;
+  --color-night-mid: #2a1455;
+  --color-moon: #ffffff;
+
+  /* --- phase 2 · under the moon (the purple-dominant gallery palette) --- */
+  --color-midnight: #292044;
+  --color-royal-lavender: #7556b8;
+  --color-dream-lavender: #c7b1f2;
+  --color-icy-blue: #b9c8ff;
+  --color-moonwhite: #f7f3ff;
+  --color-moonblush: #f3d9ea;
+
+  /* --- gift two · playlist (a red-only family — no purple or blue) --- */
+  --color-blush-red: #fbd8d3;
+  --color-pastel-red: #f4a9a2;
+  --color-cherry: #e4636c;
+  --color-rose-ink: #a83043;
+
+  /* --- hearts & accents (deep = text-safe) --- */
+  --color-heart: #e2708a;
+  --color-heart-deep: #c2455f;
+
+  /* --- elegant metals (foil gradients for the flower buttons) --- */
+  --color-gold: #e6b23c;
+  --color-gold-light: #ffe9ab;
+  --color-gold-deep: #c98b2a;
+  --color-emerald: #8fae86;
+  --color-emerald-light: #d9ead0;
+  --color-emerald-deep: #5f7d59;
+  --color-bronze: #6b4f3a;
+  --color-bronze-deep: #3f2c20;
+  --color-pine: #4d6247;
+  --color-pine-deep: #2e3a29;
+
+  /* --- warm browns (primary text, ≥ 8:1 on cream) --- */
+  --color-cocoa: #5b4636;
+  --color-cocoa-soft: #7a6552;
+
+  /* --- typography --- */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Segoe Script', cursive;
+
+  /* --- paper shapes --- */
+  --radius-paper: 18px;
+  --radius-card: 26px;
+
+  /* --- soft, warm shadows --- */
+  --shadow-soft: 0 6px 18px rgb(91 70 54 / 0.12);
+  --shadow-lifted: 0 14px 30px rgb(91 70 54 / 0.18);
+  --shadow-tape: 0 2px 6px rgb(91 70 54 / 0.16);
+
+  /* --- easing --- */
+  --ease-soft: cubic-bezier(0.22, 0.9, 0.32, 1);
+}
