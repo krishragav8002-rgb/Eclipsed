@@ -277,7 +277,7 @@ export function LoveQuestion() {
               one of them is missing. */}
           <div
             aria-hidden="true"
-            className="flex h-[min(20dvh,8rem)] w-full shrink-0 items-center justify-center"
+            className="flex h-[min(22dvh,9rem)] w-full shrink-0 items-center justify-center"
           >
             {reactionGif && (
               <img
@@ -285,7 +285,7 @@ export function LoveQuestion() {
                 src={reactionGif}
                 alt=""
                 draggable={false}
-                className="block h-auto w-auto max-h-full max-w-full"
+                className="block h-full w-full object-contain"
               />
             )}
           </div>
