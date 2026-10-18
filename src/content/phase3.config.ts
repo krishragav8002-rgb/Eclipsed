@@ -267,7 +267,7 @@ export const PHASE3_WISH: Phase3WishPage = {
   message:
     "No matter where life takes us, in every version of tomorrow, I'll keep choosing you. I will always love you.",
   personalNote: "Happy birthday, my love. I hope this year gives you all your heart's desires",
-  signature: 'your dearest Kanna....',
+  signature: '-Your love forever, Ragav...',
   accent: 'rose',
 }
 

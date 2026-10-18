@@ -1165,7 +1165,7 @@
     height: min(36dvh, 20rem);
     object-fit: contain;
     transform: translateY(-0.5rem);
-    margin-bottom: -2.5rem;
+    margin-bottom: -3rem;
   }
 
   .p3-world--wish .wish-paper {
@@ -1183,7 +1183,7 @@
   @media (max-width: 640px) {
     .p3-world--wish .wish-couple {
       height: min(29dvh, 13rem);
-      margin-bottom: -1.5rem;
+      margin-bottom: -2rem;
     }
   }
 

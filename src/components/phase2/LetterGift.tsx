@@ -304,6 +304,11 @@ export function LetterGift({ onBack }: { onBack: () => void }) {
                   >
                     {current.body}
                   </p>
+                  {current.signOff && (
+                    <p className="hand-letter mt-4 pb-1 pr-2 text-right text-cocoa">
+                      {current.signOff}
+                    </p>
+                  )}
                 </motion.div>
               </div>
 

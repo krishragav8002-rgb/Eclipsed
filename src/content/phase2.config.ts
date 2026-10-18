@@ -76,7 +76,7 @@ export const LETTER_COPY = {
  * on its own sheet — never as one long scroll. Add or remove entries to change
  * how many pages there are; the dots and the "Page n / m" line follow along.
  */
-export const LETTER_PAGES: readonly { heading?: string; body: string }[] = [
+export const LETTER_PAGES: readonly { heading?: string; body: string; signOff?: string }[] = [
   {
     body: 'Happy Birthday, my Moonpie! 💜 You have no idea how lucky I feel to have you in my life. You’re not just my girlfriend, you’re my happiness, my peace, and my favorite person in this whole world. 🌙 Having you in my life is one of the most beautiful things that has ever happened to me, and I’ll always be grateful for you. ✨ I hope your birthday is as beautiful and special as your heart. 🎂',
   },
@@ -87,7 +87,8 @@ export const LETTER_PAGES: readonly { heading?: string; body: string }[] = [
     body: 'On your special day, I wish you all the happiness, love and beautiful things your heart desires. 🎁 I wish I could take away all your sadness and replace every tear with a smile. 💜 I want to be there for you on your best days and your worst days, to support you, comfort you, and remind you how precious you are. 🌸 Sweetheart, never doubt your worth, because you’re more amazing than you realize. ✨ You deserve all the love and happiness in this world. 💜',
   },
   {
-    body: 'If I could make one wish for myself, it would be to celebrate many more birthdays with you 🎂 and create countless beautiful memories together. ✨ I know I’m not perfect, but my feelings for you are real, and I’ll always try my best to love you the way you deserve. 💜 If I had to choose all over again, I’d still choose you, a thousand times over. 💜 Thank you for being you and for making my life more beautiful. I love you so much, my baby girl. Today, tomorrow, and through all the days to come. 💜😘',
+    body: 'If I could make one wish for myself, it would be to celebrate many more birthdays with you and create countless beautiful memories together. ✨ and I’ll always try my best to love you the way you deserve. 💜 If I had to choose all over again, I’d still choose you, a thousand times over. 💜 Thank you for being you and for making my life more beautiful. I love you so much, my baby girl. Today, tomorrow, and through all the days to come. 💜',
+    signOff: '-Your Kanna😙',
   },
 ]
 
@@ -297,4 +298,3 @@ export const VIDEO_FALLBACK_ASPECT = '16 / 9'
 /* ---------- the way out ----------
    Phase 2's three gifts are done; the chapter they lead into now lives in
    `phase3.config.ts` and is rendered by `components/phases/Phase3.tsx`. */
-
