@@ -128,7 +128,9 @@ export function Phase3() {
         ? next.image.src
         : next?.kind === 'life'
           ? next.media.src
-          : undefined
+          : next?.kind === 'wish'
+            ? next.image.src
+            : undefined
     preloadImage(src)
   }, [page])
 

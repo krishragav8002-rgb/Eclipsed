@@ -1,8 +1,8 @@
 import { motion } from 'motion/react'
 import { PHASE3_WISH } from '../../content/phase3.config'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+import { AnimatedImage } from '../ui/AnimatedImage'
 import { HeartDoodle, Scribble } from './doodles'
-import coupleImage from '../../../couple-transparent.png'
 
 /**
  * The last screen of the whole experience.
@@ -33,11 +33,22 @@ export function WishPage() {
       className={`wish-scene p3-accent-${page.accent} relative flex min-h-0 flex-1 flex-col items-center justify-center`}
     >
       <div className="wish-card-wrap relative z-10 w-full">
-        <img
-          src={coupleImage}
-          alt="A couple leaning together with their foreheads touching"
-          className="wish-couple pointer-events-none relative z-0 mx-auto block object-contain"
+        <AnimatedImage
+          src={page.image.src}
+          fallbackSrc={page.image.fallbackSrc}
+          alt={page.image.alt}
+          width={page.image.width}
+          height={page.image.height}
+          loading="eager"
+          decoding="async"
           draggable={false}
+          className="wish-couple pointer-events-none relative z-0 mx-auto block object-contain"
+          fallback={
+            <span
+              aria-hidden="true"
+              className="wish-couple pointer-events-none relative z-0 mx-auto block"
+            />
+          }
         />
         <motion.div
           className="wish-paper relative z-10 flex flex-col items-center px-4 py-4 text-center sm:px-6 sm:py-5"

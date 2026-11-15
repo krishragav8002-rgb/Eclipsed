@@ -23,7 +23,10 @@ export function UniversePage({ page }: { page: Phase3UniversePage }) {
       <MediaFrame
         wide
         src={page.image.src}
+        fallbackSrc={page.image.fallbackSrc}
         alt={page.image.alt}
+        width={page.image.width}
+        height={page.image.height}
         tilt={-0.6}
         accentTape
         className="min-h-0 w-full shrink"

@@ -11,11 +11,14 @@
    Asset paths are real files already in this project (verified, not guessed):
      · gifs/optimized/more gifs/1–9.webp — one animation for each Part A screen
        (the original GIFs stay alongside them as fallbacks)
-     · multiverse/1.png–5.png — the five Part B illustrations
+     · Multiverse/optimized/1–5.webp — the five Part B illustrations
+       (the original Multiverse/1–5.png files stay alongside them as fallbacks)
+     · optimized/couple-transparent.webp — the final birthday illustration
+       (the original couple-transparent.png stays at the project root as a fallback)
    Edit Part A messages and animations in PHASE3_LIFE_PAGES; edit Part B lines
    and images in PHASE3_UNIVERSE_PAGES. Navigation stays in Phase3.tsx.
-   If a file cannot be shown, its card draws a sketch of ink marks in the same
-   paper style instead of a broken-image icon.
+   If a file cannot be shown, its card retries the original image and then draws a
+   sketch of ink marks in the same paper style instead of a broken-image icon.
 
    `index` is the number written on the screen (`01 / 09` in Part A). It has to
    match the position in the list it lives in, because that is what the count
@@ -46,11 +49,21 @@ import gif09Fallback from '../../gifs/more gifs/9.gif'
 
 /* ---------- assets · Part B (the five multiverse illustrations) ---------- */
 
-import universeImage1 from '../../Multiverse/1.png'
-import universeImage2 from '../../Multiverse/2.png'
-import universeImage3 from '../../Multiverse/3.png'
-import universeImage4 from '../../Multiverse/4.png'
-import universeImage5 from '../../Multiverse/5.png'
+import universeImage1 from '../../Multiverse/optimized/1.webp'
+import universeImage2 from '../../Multiverse/optimized/2.webp'
+import universeImage3 from '../../Multiverse/optimized/3.webp'
+import universeImage4 from '../../Multiverse/optimized/4.webp'
+import universeImage5 from '../../Multiverse/optimized/5.webp'
+import universeImage1Fallback from '../../Multiverse/1.png'
+import universeImage2Fallback from '../../Multiverse/2.png'
+import universeImage3Fallback from '../../Multiverse/3.png'
+import universeImage4Fallback from '../../Multiverse/4.png'
+import universeImage5Fallback from '../../Multiverse/5.png'
+
+/* ---------- assets · Part C (the final wish illustration) ---------- */
+
+import wishCoupleImage from '../../optimized/couple-transparent.webp'
+import wishCoupleImageFallback from '../../couple-transparent.png'
 
 /* ---------- the world ---------- */
 
@@ -228,6 +241,9 @@ export interface Phase3UniversePage {
   accent: Phase3Accent
   image: {
     src: string
+    fallbackSrc: string
+    width: number
+    height: number
     alt: string
   }
 }
@@ -241,6 +257,9 @@ export const PHASE3_UNIVERSE_PAGES: readonly Phase3UniversePage[] = [
     accent: 'green',
     image: {
       src: universeImage1,
+      fallbackSrc: universeImage1Fallback,
+      width: 1254,
+      height: 1254,
       alt: 'Two rabbits in scarves watching a sunrise over a snowy landscape',
     },
   },
@@ -251,6 +270,9 @@ export const PHASE3_UNIVERSE_PAGES: readonly Phase3UniversePage[] = [
     accent: 'blue',
     image: {
       src: universeImage2,
+      fallbackSrc: universeImage2Fallback,
+      width: 1254,
+      height: 1254,
       alt: 'Two cats sitting together beneath the moon above a village',
     },
   },
@@ -261,6 +283,9 @@ export const PHASE3_UNIVERSE_PAGES: readonly Phase3UniversePage[] = [
     accent: 'yellow',
     image: {
       src: universeImage3,
+      fallbackSrc: universeImage3Fallback,
+      width: 1254,
+      height: 1254,
       alt: 'Two birds perched together on a branch among cherry blossoms',
     },
   },
@@ -271,6 +296,9 @@ export const PHASE3_UNIVERSE_PAGES: readonly Phase3UniversePage[] = [
     accent: 'lilac',
     image: {
       src: universeImage4,
+      fallbackSrc: universeImage4Fallback,
+      width: 1254,
+      height: 1254,
       alt: 'Two sunflowers standing together against a glowing sunset',
     },
   },
@@ -281,6 +309,9 @@ export const PHASE3_UNIVERSE_PAGES: readonly Phase3UniversePage[] = [
     accent: 'rose',
     image: {
       src: universeImage5,
+      fallbackSrc: universeImage5Fallback,
+      width: 1312,
+      height: 1199,
       alt: 'A couple sitting close together and holding hands beneath the moon',
     },
   },
@@ -304,6 +335,14 @@ export interface Phase3WishPage {
   personalNote: string
   /** ✏️ how you sign off ✏️ */
   signature: string
+  /** the transparent couple illustration above the letter */
+  image: {
+    src: string
+    fallbackSrc: string
+    width: number
+    height: number
+    alt: string
+  }
   accent: Phase3Accent
 }
 
@@ -316,6 +355,13 @@ export const PHASE3_WISH: Phase3WishPage = {
     "No matter where life takes us, in every version of tomorrow, I'll keep choosing you. I will always love you.",
   personalNote: "Happy birthday, my love. I hope this year gives you all your heart's desires",
   signature: '-Your love forever, Ragav...',
+  image: {
+    src: wishCoupleImage,
+    fallbackSrc: wishCoupleImageFallback,
+    width: 1774,
+    height: 887,
+    alt: 'A couple leaning together with their foreheads touching',
+  },
   accent: 'rose',
 }
 
