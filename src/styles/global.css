@@ -1086,9 +1086,10 @@
     --p3-green-ink: #24560b;
     --p3-green-soft: #dff0cd;
     --p3-green-line: #b7dba0;
-    --p3-paper: #fbf8f1;
-    --p3-paper-2: #f4efe3;
-    --p3-paper-3: #ece5d5;
+    /* card paper on the green plate — a soft pastel green instead of cream */
+    --p3-paper: #e8f3d9;
+    --p3-paper-2: #deedc9;
+    --p3-paper-3: #d2e4b9;
     --p3-ink: #1b1a15;
     --p3-ink-soft: #55503f;
     --p3-ink-faint: #8d8774;
@@ -1145,6 +1146,73 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='164' viewBox='0 0 150 164'%3E%3Cg fill='none' stroke='%231b1a15' stroke-opacity='.16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 150c19-29 24-58 12-86m1 40C16 101 8 91 8 77c14 1 22 10 23 27Zm-1-19c0-14 7-24 20-30 2 14-4 24-20 30Zm83 67c13-24 15-48 6-72m2 36c-14-2-21-10-21-23 13 1 21 9 21 23Zm-1-16c1-13 7-22 19-27 2 12-4 22-19 27Z'/%3E%3Cpath d='m78 32 2 5 5 2-5 2-2 5-2-5-5-2 5-2Zm45 30 1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5Z'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 150px 164px;
     animation: none;
+  }
+
+  /* Part B's plate: the same dashes-and-dots tile as the green one, re-inked
+     for the multiverse — a dark purple sheet, pastel-purple rods and purple
+     dots. It keeps the inherited drift animation, so the tile moves exactly as
+     it does everywhere else in the chapter. */
+  .p3-world--multiverse {
+    --p3-mv-plate: #3b1d5e;
+    --p3-mv-rod: #8a63c2;
+    --p3-mv-dot: #b184e0;
+    --p3-mv-cream: #f2e6ff;
+
+    /* The cards follow the plate: soft pastel lavender paper instead of cream. */
+    --p3-paper: #eae0f7;
+    --p3-paper-2: #e1d4f1;
+    --p3-paper-3: #d6c6e8;
+
+    background-color: var(--p3-mv-plate);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='180' viewBox='0 0 280 180'%3E%3Cg fill='%238a63c2' fill-opacity='.5'%3E%3Crect x='24' y='22' width='62' height='14' rx='7'/%3E%3Crect x='170' y='58' width='86' height='14' rx='7'/%3E%3Crect x='64' y='126' width='98' height='14' rx='7'/%3E%3C/g%3E%3Cg fill='%23b184e0' fill-opacity='.9'%3E%3Ccircle cx='124' cy='24' r='4.5'/%3E%3Ccircle cx='246' cy='28' r='4.5'/%3E%3Ccircle cx='28' cy='90' r='4.5'/%3E%3Ccircle cx='132' cy='88' r='4.5'/%3E%3Ccircle cx='220' cy='132' r='4.5'/%3E%3Ccircle cx='258' cy='156' r='4.5'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 280px 180px;
+  }
+
+  /* On the dark plate the white margin doodles still read; the few ink marks
+     would not, so they are lifted to the plate's lilac instead. */
+  .p3-world--multiverse .p3-mark--ink {
+    color: var(--p3-mv-dot);
+    opacity: 0.45;
+  }
+
+  /* The rail and the handwritten "tap" are inked for a light plate; on the dark
+     one they take the same pale lilac as the dots. The paper controls keep
+     their own cream-and-ink treatment. */
+  .p3-world--multiverse .p3-rail-dash {
+    background-color: rgb(242 230 255 / 0.28);
+  }
+
+  .p3-world--multiverse .p3-rail-dash--on {
+    background-color: var(--p3-mv-cream);
+  }
+
+  .p3-world--multiverse .p3-rail-dash--past {
+    background-color: rgb(242 230 255 / 0.55);
+  }
+
+  .p3-world--multiverse .p3-cue {
+    color: var(--p3-mv-cream);
+  }
+
+  /* The "10 — in every universe" label becomes a tab on the dark plate: a deep
+     lilac chip with cream type. The trailing hairline belongs to the plain
+     label, so it steps out here, and the number joins the text in cream because
+     the per-page accents are too dark to read on lilac. */
+  .p3-world--multiverse .p3-label {
+    gap: 0.4rem;
+    padding: 0.22rem 0.62rem;
+    background-color: #6a4f9f;
+    border: 1.5px solid rgb(27 26 21 / 0.45);
+    border-radius: var(--p3-radius-sketch);
+    color: var(--p3-mv-cream);
+  }
+
+  .p3-world--multiverse .p3-label::after {
+    display: none;
+  }
+
+  .p3-world--multiverse .p3-index {
+    color: var(--p3-mv-cream);
   }
 
   .p3-world--wish .wish-scene {
@@ -1375,6 +1443,12 @@
     height: 1.4rem;
     width: 5.25rem;
     background-color: rgb(236 200 130 / 0.62);
+    /* washi print: faint diagonal ink stripes over whatever tint the tape wears */
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgb(27 26 21 / 0.12) 0 5px,
+      transparent 5px 11px
+    );
     border-left: 1px dashed rgb(27 26 21 / 0.25);
     border-right: 1px dashed rgb(27 26 21 / 0.25);
     box-shadow: 0 2px 6px rgb(27 26 21 / 0.14);
@@ -1388,9 +1462,9 @@
 
   /* --- pictures ----------------------------------------------------------- */
 
-  /* The frame a picture is taped into: cream paper, ink outline, sketch corner,
-     and a hard offset shadow. The image itself is never cropped, so nothing
-     important in the artwork is ever lost. */
+  /* The frame a picture is taped into: the stage's paper, ink outline, sketch
+     corner, and a hard offset shadow. The image itself is never cropped, so
+     nothing important in the artwork is ever lost. */
   .p3-frame {
     position: relative;
     display: flex;

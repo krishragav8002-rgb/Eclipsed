@@ -6,9 +6,11 @@ import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { isInteractiveTarget } from '../../lib/tapTarget'
 import { site } from '../../content/site.config'
 import { Sunflower } from '../flowers/Sunflower'
+import { AnimatedImage } from '../ui/AnimatedImage'
 import { FlowerButton } from '../ui/FlowerButton'
 import { TapCue } from '../ui/TapCue'
-import celebratingCat from '../../../gifs/Celebrating cat.gif'
+import celebratingCat from '../../../gifs/optimized/Celebrating cat.webp'
+import celebratingCatFallback from '../../../gifs/Celebrating cat.gif'
 
 /**
  * Screen 1 — the birthday page.
@@ -41,10 +43,14 @@ export function GreetingScreen() {
           <h1 id="greeting-title" className="display mx-auto">
             {site.heroHeading}
           </h1>
-          <img
+          <AnimatedImage
             src={celebratingCat}
+            fallbackSrc={celebratingCatFallback}
             alt="A cat celebrating"
             draggable={false}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="mx-auto mt-5 block h-auto w-auto max-h-[32dvh] max-w-full rounded-card shadow-soft"
           />
         </motion.div>

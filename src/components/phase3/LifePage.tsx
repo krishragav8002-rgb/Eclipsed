@@ -43,7 +43,12 @@ export function LifePage({ page }: { page: Phase3LifePage }) {
         </p>
       </div>
 
-      <GifCard src={page.media.src} alt={page.media.alt ?? ''} className="w-full flex-1" />
+      <GifCard
+        src={page.media.src}
+        fallbackSrc={page.media.fallbackSrc}
+        alt={page.media.alt ?? ''}
+        className="w-full flex-1"
+      />
     </article>
   )
 }

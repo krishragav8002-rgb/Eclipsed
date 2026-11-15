@@ -17,9 +17,9 @@ interface MediaFrameProps {
 }
 
 /**
- * A picture taped into the page: cream paper, an ink outline, a deliberately
- * irregular corner and a hard offset shadow — the portfolio's card treatment,
- * borrowed exactly.
+ * A picture taped into the page: the stage's paper, an ink outline, a
+ * deliberately irregular corner and a hard offset shadow — the portfolio's
+ * card treatment, borrowed exactly.
  *
  * The image is never cropped: it is capped by `--p3-media` (or the wider cap on
  * the seasonal screens) and keeps its own proportions, so no part of the

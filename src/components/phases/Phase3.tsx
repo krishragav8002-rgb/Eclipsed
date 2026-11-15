@@ -10,6 +10,7 @@ import {
 import { useAutofocus } from '../../hooks/useAutofocus'
 import { usePhaseTransition } from '../../hooks/usePhaseTransition'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+import { preloadImage } from '../../lib/preloadImage'
 import { isInteractiveTarget } from '../../lib/tapTarget'
 import { SketchArrow } from '../phase3/doodles'
 import { BirthdayGarden } from '../phase3/BirthdayGarden'
@@ -32,8 +33,9 @@ import { WishPage } from '../phase3/WishPage'
  * control in the corner goes back, a rail of ink dashes shows how far in we are,
  * and a handwritten "tap" sits beside it — except at the end of Parts A and B,
  * where a deliberate control carries the story forward. The plate — green,
- * dashed and dotted exactly like the portfolio —
- * never changes; only the paper turns.
+ * dashed and dotted exactly like the portfolio — carries Parts A and C; Part B
+ * swaps it for a dark-purple plate with pastel-purple rods and purple dots, the
+ * same tile and drift in another key. Only the paper turns.
  *
  * When the wish page is showing, the chapter stops. There is nothing after it.
  */
@@ -127,9 +129,7 @@ export function Phase3() {
         : next?.kind === 'life'
           ? next.media.src
           : undefined
-    if (!src) return
-    const img = new Image()
-    img.src = src
+    preloadImage(src)
   }, [page])
 
   return (
@@ -137,7 +137,13 @@ export function Phase3() {
       ref={sectionRef}
       onClick={onTap}
       aria-label="In every universe, it's you"
-      className={`p3-world ${current.kind === 'wish' ? 'p3-world--wish' : ''}`}
+      className={`p3-world ${
+        current.kind === 'universe'
+          ? 'p3-world--multiverse'
+          : current.kind === 'wish'
+            ? 'p3-world--wish'
+            : ''
+      }`}
     >
       <PaperWorld />
       {current.kind === 'wish' && <BirthdayGarden />}

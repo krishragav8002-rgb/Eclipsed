@@ -9,10 +9,11 @@
    because only you know how you actually say these things.
 
    Asset paths are real files already in this project (verified, not guessed):
-     · gifs/more gifs/1–9.gif — one GIF for each of the nine Part A screens
+     · gifs/optimized/more gifs/1–9.webp — one animation for each Part A screen
+       (the original GIFs stay alongside them as fallbacks)
      · multiverse/1.png–5.png — the five Part B illustrations
-   Edit Part A messages and GIFs in PHASE3_LIFE_PAGES; edit Part B lines and
-   images in PHASE3_UNIVERSE_PAGES. Navigation stays in Phase3.tsx.
+   Edit Part A messages and animations in PHASE3_LIFE_PAGES; edit Part B lines
+   and images in PHASE3_UNIVERSE_PAGES. Navigation stays in Phase3.tsx.
    If a file cannot be shown, its card draws a sketch of ink marks in the same
    paper style instead of a broken-image icon.
 
@@ -21,18 +22,27 @@
    and the little rail at the bottom work from. Keep them in order.
    ============================================================================ */
 
-/* ---------- assets · Part A (one GIF for each screen) — ✏️ EDIT ME ---------- */
+/* ---------- assets · Part A (one animation for each screen) — ✏️ EDIT ME ---------- */
 
-/** The nine local Part A GIFs. Their screen-by-screen pairing is below. */
-import gif01 from '../../gifs/more gifs/1.gif'
-import gif02 from '../../gifs/more gifs/2.gif'
-import gif03 from '../../gifs/more gifs/3.gif'
-import gif04 from '../../gifs/more gifs/4.gif'
-import gif05 from '../../gifs/more gifs/5.gif'
-import gif06 from '../../gifs/more gifs/6.gif'
-import gif07 from '../../gifs/more gifs/7.gif'
-import gif08 from '../../gifs/more gifs/8.gif'
-import gif09 from '../../gifs/more gifs/9.gif'
+/** The nine local Part A animations. Their screen-by-screen pairing is below. */
+import gif01 from '../../gifs/optimized/more gifs/1.webp'
+import gif02 from '../../gifs/optimized/more gifs/2.webp'
+import gif03 from '../../gifs/optimized/more gifs/3.webp'
+import gif04 from '../../gifs/optimized/more gifs/4.webp'
+import gif05 from '../../gifs/optimized/more gifs/5.webp'
+import gif06 from '../../gifs/optimized/more gifs/6.webp'
+import gif07 from '../../gifs/optimized/more gifs/7.webp'
+import gif08 from '../../gifs/optimized/more gifs/8.webp'
+import gif09 from '../../gifs/optimized/more gifs/9.webp'
+import gif01Fallback from '../../gifs/more gifs/1.gif'
+import gif02Fallback from '../../gifs/more gifs/2.gif'
+import gif03Fallback from '../../gifs/more gifs/3.gif'
+import gif04Fallback from '../../gifs/more gifs/4.gif'
+import gif05Fallback from '../../gifs/more gifs/5.gif'
+import gif06Fallback from '../../gifs/more gifs/6.gif'
+import gif07Fallback from '../../gifs/more gifs/7.gif'
+import gif08Fallback from '../../gifs/more gifs/8.gif'
+import gif09Fallback from '../../gifs/more gifs/9.gif'
 
 /* ---------- assets · Part B (the five multiverse illustrations) ---------- */
 
@@ -82,12 +92,14 @@ export interface Phase3LifePage {
   message: string
   accent: Phase3Accent
   /**
-   * The GIF taped underneath the message. ✏️ To put a different picture on this
-   * screen, change `src` to another of the imports at the top of this file.
+   * The animation taped underneath the message. ✏️ To put a different picture on
+   * this screen, change `src` to another of the imports at the top of this file.
    */
   media: {
-    /** an imported asset (a GIF, or a still image) */
+    /** an imported asset (an animated WebP, or a still image) */
     src: string
+    /** the original GIF, used only if the WebP cannot load */
+    fallbackSrc: string
     /**
      * ✏️ optional — a description for screen readers. Left empty on purpose:
      * I cannot see the GIFs, so only you can say what each one shows. Fill one
@@ -101,9 +113,9 @@ export interface Phase3LifePage {
  * The nine screens of Part A, in your order: the running joke the two of you
  * share (01–05), and then the turn, ending on the one that means the most (09).
  *
- * Every screen is the same shape — the count, the message, the GIF card under
- * it — so the only things that change as the story moves are the words, the
- * picture and one small shift of accent colour.
+ * Every screen is the same shape — the count, the message, the picture card
+ * under it — so the only things that change as the story moves are the words,
+ * the picture and one small shift of accent colour.
  */
 export const PHASE3_LIFE_PAGES: readonly Phase3LifePage[] = [
   {
@@ -111,63 +123,99 @@ export const PHASE3_LIFE_PAGES: readonly Phase3LifePage[] = [
     index: '01',
     message: 'Well... All I want in this life is to have a beautiful life with you...😉',
     accent: 'green',
-    media: { src: gif01, alt: 'Two cartoon cats spending time together' },
+    media: {
+      src: gif01,
+      fallbackSrc: gif01Fallback,
+      alt: 'Two cartoon cats spending time together',
+    },
   },
   {
     kind: 'life',
     index: '02',
     message: 'and also annoy you for absolutely no reason and get slaps from you😏',
     accent: 'yellow',
-    media: { src: gif02, alt: 'Two cartoon cats in a playful scene' },
+    media: {
+      src: gif02,
+      fallbackSrc: gif02Fallback,
+      alt: 'Two cartoon cats in a playful scene',
+    },
   },
   {
     kind: 'life',
     index: '03',
     message: 'then come and beg you to forgive me😅',
     accent: 'blue',
-    media: { src: gif03, alt: 'A pair of cartoon cats close together' },
+    media: {
+      src: gif03,
+      fallbackSrc: gif03Fallback,
+      alt: 'A pair of cartoon cats close together',
+    },
   },
   {
     kind: 'life',
     index: '04',
     message: 'Just for us to annoy each other again shamelessly😂',
     accent: 'rose',
-    media: { src: gif04, alt: 'Two cartoon cats sitting side by side' },
+    media: {
+      src: gif04,
+      fallbackSrc: gif04Fallback,
+      alt: 'Two cartoon cats sitting side by side',
+    },
   },
   {
     kind: 'life',
     index: '05',
     message: 'and get together again...🤗',
     accent: 'green',
-    media: { src: gif05, alt: 'A blushing cartoon cat surrounded by hearts' },
+    media: {
+      src: gif05,
+      fallbackSrc: gif05Fallback,
+      alt: 'A blushing cartoon cat surrounded by hearts',
+    },
   },
   {
     kind: 'life',
     index: '06',
     message: 'Because we cherish each other above everything else💗',
     accent: 'rose',
-    media: { src: gif06, alt: 'Two cartoon cats sharing a tender moment' },
+    media: {
+      src: gif06,
+      fallbackSrc: gif06Fallback,
+      alt: 'Two cartoon cats sharing a tender moment',
+    },
   },
   {
     kind: 'life',
     index: '07',
     message: 'and care for each other too much...💗',
     accent: 'lilac',
-    media: { src: gif07, alt: 'Two cartoon cats together on a green background' },
+    media: {
+      src: gif07,
+      fallbackSrc: gif07Fallback,
+      alt: 'Two cartoon cats together on a green background',
+    },
   },
   {
     kind: 'life',
     index: '08',
     message: 'and wanna do whatever the hell this is🤣',
     accent: 'yellow',
-    media: { src: gif08, alt: 'Two cartoon cats in a warm hug beneath a heart' },
+    media: {
+      src: gif08,
+      fallbackSrc: gif08Fallback,
+      alt: 'Two cartoon cats in a warm hug beneath a heart',
+    },
   },
   {
     kind: 'life',
     index: '09',
     message: 'and really love each other more than anyone else.💜',
     accent: 'lilac',
-    media: { src: gif09, alt: 'Two cartoon cats holding hands with a heart nearby' },
+    media: {
+      src: gif09,
+      fallbackSrc: gif09Fallback,
+      alt: 'Two cartoon cats holding hands with a heart nearby',
+    },
   },
 ]
 

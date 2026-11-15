@@ -10,10 +10,12 @@ import { previousPhase, type PhaseId } from '../../state/experienceReducer'
 import { Sunflower } from '../flowers/Sunflower'
 import { PaperCard } from '../scrapbook/PaperCard'
 import { TapeStrip } from '../scrapbook/TapeStrip'
+import { AnimatedImage } from '../ui/AnimatedImage'
 import { FlowerButton } from '../ui/FlowerButton'
 import { ArrowRight } from 'lucide-react'
 import { TapCue } from '../ui/TapCue'
-import babyGirlGif from '../../../gifs/Baby girl.gif'
+import babyGirlWebp from '../../../gifs/optimized/Baby girl.webp'
+import babyGirlFallback from '../../../gifs/Baby girl.gif'
 
 interface MessagePageProps {
   /** which of the two greeting messages this page shows */
@@ -29,8 +31,11 @@ const CONTENT: Record<
     tape: 'blush' | 'butter'
     tapeSide: string
     next: PhaseId
-    /** Optional scrapbook GIF shown directly underneath the message. */
-    gif?: string
+    /** Optional scrapbook animation shown directly underneath the message. */
+    gif?: {
+      src: string
+      fallbackSrc: string
+    }
   }
 > = {
   revealLeft: {
@@ -48,7 +53,7 @@ const CONTENT: Record<
     tape: 'blush',
     tapeSide: 'left-6 -rotate-3',
     next: 'quickQuestions',
-    gif: babyGirlGif,
+    gif: { src: babyGirlWebp, fallbackSrc: babyGirlFallback },
   },
 }
 
@@ -89,10 +94,13 @@ export function MessagePage({ phase }: MessagePageProps) {
               {message}
             </h1>
             {gif && (
-              <img
-                src={gif}
+              <AnimatedImage
+                src={gif.src}
+                fallbackSrc={gif.fallbackSrc}
                 alt="Baby girl"
                 draggable={false}
+                loading="eager"
+                decoding="async"
                 className="mx-auto mt-4 block h-auto w-auto max-h-[26dvh] max-w-full rounded-card shadow-soft"
               />
             )}

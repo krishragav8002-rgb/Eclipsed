@@ -1,11 +1,13 @@
-import { useCallback, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
 import { useAutofocus } from '../../hooks/useAutofocus'
 import { usePhaseTransition } from '../../hooks/usePhaseTransition'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { site } from '../../content/site.config'
+import { preloadImage } from '../../lib/preloadImage'
 import { PaperCard } from '../scrapbook/PaperCard'
 import { TapeStrip } from '../scrapbook/TapeStrip'
+import { AnimatedImage } from '../ui/AnimatedImage'
 import { LoveFlowerButton } from '../ui/LoveFlowerButton'
 
 /* ------------------------------------------------------------
@@ -40,21 +42,53 @@ const YES_GAP = 14
 /** How much YES grows once it owns the arena on its own. */
 const YES_GROW = 1.35
 
-/** Reaction GIFs for the escaping NO flower: `gifs/Attempt gifs/<n>.gif` belongs
- *  to the state with n completed NO taps — `0.gif` sits beside the untouched
- *  question, `1.gif` answers the first tap, and `8.gif` the eighth and final
- *  one — so the file's number always equals the attempt counter. Loaded through
- *  Vite's glob so a missing file simply shows no reaction instead of breaking
- *  the build. */
-const REACTION_GIFS: Record<number, string> = {}
-const reactionFiles = import.meta.glob('../../../gifs/Attempt gifs/*.gif', {
-  eager: true,
-  import: 'default',
-})
-for (const [filePath, url] of Object.entries(reactionFiles)) {
-  if (typeof url !== 'string') continue
-  const attemptNumber = Number.parseInt(filePath.split('/').pop() ?? '', 10)
-  if (Number.isFinite(attemptNumber)) REACTION_GIFS[attemptNumber] = url
+/** Reaction animations for the escaping NO flower: `gifs/optimized/Attempt
+ *  gifs/<n>.webp` belongs to the state with n completed NO taps — `0.webp` sits
+ *  beside the untouched question, `1.webp` answers the first tap, and `8.webp`
+ *  the eighth and final one — so the file's number always equals the attempt
+ *  counter. Each animation keeps its original GIF as a fallback, and both are
+ *  loaded through Vite's glob so a missing pair simply shows no reaction
+ *  instead of breaking the build. */
+interface ReactionAsset {
+  src: string
+  fallbackSrc: string
+}
+
+const REACTION_GIFS: Record<number, ReactionAsset> = {}
+
+function indexReactions(files: Record<string, unknown>): Record<number, string> {
+  const indexed: Record<number, string> = {}
+  for (const [filePath, url] of Object.entries(files)) {
+    if (typeof url !== 'string') continue
+    const attemptNumber = Number.parseInt(filePath.split('/').pop() ?? '', 10)
+    if (Number.isFinite(attemptNumber)) indexed[attemptNumber] = url
+  }
+  return indexed
+}
+
+const reactionWebpFiles = indexReactions(
+  import.meta.glob('../../../gifs/optimized/Attempt gifs/*.webp', {
+    eager: true,
+    import: 'default',
+  }),
+)
+const reactionGifFiles = indexReactions(
+  import.meta.glob('../../../gifs/Attempt gifs/*.gif', {
+    eager: true,
+    import: 'default',
+  }),
+)
+
+for (const attempt of new Set([
+  ...Object.keys(reactionWebpFiles),
+  ...Object.keys(reactionGifFiles),
+])) {
+  const attemptNumber = Number(attempt)
+  const webp = reactionWebpFiles[attemptNumber]
+  const gif = reactionGifFiles[attemptNumber]
+  const src = webp ?? gif
+  const fallbackSrc = gif ?? webp
+  if (src && fallbackSrc) REACTION_GIFS[attemptNumber] = { src, fallbackSrc }
 }
 
 const clamp = (min: number, value: number, max: number) => Math.min(max, Math.max(min, value))
@@ -102,12 +136,19 @@ export function LoveQuestion() {
 
   const { w: arenaW, h: arenaH } = arena
 
-  /** Reaction GIF for the current attempt — the counter is the index, so `0.gif`
-   *  waits on the untouched question, each tap answers with its own file, and the
-   *  eighth and final tap shows `8.gif` beside the last message. Derived from
-   *  `attempt`, so it can never drift out of sync with the message or the
-   *  attempt counter. */
-  const reactionGif = REACTION_GIFS[attempt]
+  /** Reaction animation for the current attempt — the counter is the index, so
+   *  `0.webp` waits on the untouched question, each tap answers with its own
+   *  file, and the eighth and final tap shows `8.webp` beside the last message.
+   *  Derived from `attempt`, so it can never drift out of sync with the message
+   *  or the attempt counter. */
+  const reaction = REACTION_GIFS[attempt]
+
+  // Warm only the next reaction, once the current one is already on screen.
+  // The first tap then answers immediately without loading the whole set.
+  useEffect(() => {
+    const next = REACTION_GIFS[attempt + 1]
+    if (next) preloadImage(next.src)
+  }, [attempt])
 
   // Both flowers are sized to the arena so they always fit comfortably.
   const buttonSize = arenaW ? clamp(84, arenaW * 0.34, 132) : 104
@@ -279,12 +320,14 @@ export function LoveQuestion() {
             aria-hidden="true"
             className="flex h-[min(22dvh,9rem)] w-full shrink-0 items-center justify-center"
           >
-            {reactionGif && (
-              <img
-                key={reactionGif}
-                src={reactionGif}
+            {reaction && (
+              <AnimatedImage
+                src={reaction.src}
+                fallbackSrc={reaction.fallbackSrc}
                 alt=""
                 draggable={false}
+                loading="eager"
+                decoding="async"
                 className="block h-full w-full object-contain"
               />
             )}
